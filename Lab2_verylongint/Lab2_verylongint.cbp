@@ -34,9 +34,16 @@
 				</Linker>
 			</Target>
 		</Build>
-		<Unit filename="main.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Compiler>
+			<Add directory="../../Lab1_functions" />
+			<Add directory="../Lab2_functions" />
+		</Compiler>
+		<Linker>
+			<Add library="../../Lab1_functions/bin/Debug/libLab1_functions.a" />
+			<Add library="../Lab2_functions/bin/Debug/libLab2_functions.a" />
+		</Linker>
+		<Unit filename="lab2_verylongint.cxx" />
+		<Unit filename="lab2_verylongint.hxx" />
 		<Extensions>
 			<code_completion />
 			<envvars />
