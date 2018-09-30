@@ -13,11 +13,11 @@ VeryLongInt::VeryLongInt(int n0, int base0, int seed):VeryLongInt(){
     setBase(base0);
     double m;
     for(int i = 0; i < n; ++i){
-        method1(seed,m);
+        method5(seed,m);
         setDigit(i, seed%getBase());
     }
     while(getDigit(n-1)==0){
-        method1(seed,m);
+        method5(seed,m);
         setDigit(n-1, seed%getBase());
     }
 }
