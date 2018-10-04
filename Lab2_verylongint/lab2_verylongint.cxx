@@ -1,6 +1,5 @@
 //developed by Oleksandr Maystrenko K-22, 2018
 #include <iostream>
-#include "lab1_algorithms.hxx"
 #include "lab2_verylongint.hxx"
 #include "lab2_functions.hxx"
 
@@ -11,14 +10,11 @@ VeryLongInt::VeryLongInt(int n0, int base0):VeryLongInt(){
 VeryLongInt::VeryLongInt(int n0, int base0, int seed):VeryLongInt(){
     setN(n0);
     setBase(base0);
-    double m;
     for(int i = 0; i < n; ++i){
-        method5(seed,m);
-        setDigit(i, seed%getBase());
+        setDigit(i, rand()%getBase());
     }
     while(getDigit(n-1)==0){
-        method5(seed,m);
-        setDigit(n-1, seed%getBase());
+        setDigit(n-1, rand()%getBase());
     }
 }
 
