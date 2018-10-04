@@ -34,13 +34,11 @@
 			<Add directory="../../Copyright" />
 			<Add directory="../Lab2_functions" />
 			<Add directory="../Lab2_verylongint" />
-			<Add directory="../../Lab1_functions" />
 		</Compiler>
 		<Linker>
 			<Add library="../../Copyright/bin/Debug/libCopyright.a" />
 			<Add library="../Lab2_functions/bin/Debug/libLab2_functions.a" />
 			<Add library="../Lab2_verylongint/bin/Debug/libLab2_verylongint.a" />
-			<Add library="../../Lab1_functions/bin/Debug/libLab1_functions.a" />
 		</Linker>
 		<Unit filename="lab2_main.cxx" />
 		<Extensions>

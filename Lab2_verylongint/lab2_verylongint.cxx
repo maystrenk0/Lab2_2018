@@ -124,6 +124,7 @@ VeryLongInt* VeryLongInt::multiplyByBasePow(int k){
     VeryLongInt *ans = new VeryLongInt(n+k, base);
     for(int i = k; i < k+n; ++i)
         ans->setDigit(i,getDigit(i-k));
+    ans->checkLastDigit();
     return ans;
 }
 
@@ -132,6 +133,7 @@ VeryLongInt* VeryLongInt::getFirst(int k){
     VeryLongInt *ans = new VeryLongInt(k, base);
     for(int i = 0; i < k; ++i)
         ans->setDigit(i,getDigit(i));
+    ans->checkLastDigit();
     return ans;
 }
 VeryLongInt* VeryLongInt::getWithoutFirst(int k){
@@ -140,6 +142,7 @@ VeryLongInt* VeryLongInt::getWithoutFirst(int k){
     VeryLongInt *ans = new VeryLongInt(n-k, base);
     for(int i = 0; i < n; ++i)
         ans->setDigit(i,getDigit(i+k));
+    ans->checkLastDigit();
     return ans;
 }
 
