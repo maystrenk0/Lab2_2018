@@ -17,7 +17,7 @@ int main(){
         cout<<endl<<endl;
         myNumber2->output();
         cout<<endl<<endl;
-        myNumber1->setMultiply(karatsuba);
+
         VeryLongInt *myNumber3 = (*myNumber1)*(*myNumber2);
 
         myNumber3->output();

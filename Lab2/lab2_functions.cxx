@@ -14,6 +14,7 @@ VeryLongInt* karatsuba(VeryLongInt x, VeryLongInt y){
     b = x.getFirst(m);
     c = y.getWithoutFirst(yn+yn%2-m);
     d = y.getFirst(m);
+    /*
     std::cout<<std::endl;
     a->output();
     std::cout<<std::endl;
@@ -23,6 +24,7 @@ VeryLongInt* karatsuba(VeryLongInt x, VeryLongInt y){
     std::cout<<std::endl;
     d->output();
     std::cout<<std::endl;
+    */
     VeryLongInt *aTimesC = karatsuba(*a,*c);
     VeryLongInt *bTimesD = karatsuba(*b,*d);
     VeryLongInt *aTimesDPlusBTimesC = *(karatsuba(*a,*d))+*(karatsuba(*b,*c));

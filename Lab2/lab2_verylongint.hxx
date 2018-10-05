@@ -20,7 +20,7 @@ public:
     void setN(int n0);
     void setBase(int base0);
     void setDigit(int i, int x);
-    void setMultiply(VeryLongInt* (*multiply0) (VeryLongInt, VeryLongInt));
+    void setMultiply();
 
     VeryLongInt& operator= (VeryLongInt &a);
     VeryLongInt* operator+ (VeryLongInt a);

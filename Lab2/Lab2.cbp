@@ -31,16 +31,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
-			<Add directory="../../Copyright" />
-			<Add directory="../Lab2_functions" />
-			<Add directory="../Lab2_verylongint" />
 		</Compiler>
-		<Linker>
-			<Add library="../../Copyright/bin/Debug/libCopyright.a" />
-			<Add library="../Lab2_functions/bin/Debug/libLab2_functions.a" />
-			<Add library="../Lab2_verylongint/bin/Debug/libLab2_verylongint.a" />
-		</Linker>
+		<Unit filename="lab2_functions.cxx" />
+		<Unit filename="lab2_functions.hxx" />
 		<Unit filename="lab2_main.cxx" />
+		<Unit filename="lab2_verylongint.cxx" />
+		<Unit filename="lab2_verylongint.hxx" />
 		<Extensions>
 			<code_completion />
 			<envvars />

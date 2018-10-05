@@ -6,10 +6,12 @@
 VeryLongInt::VeryLongInt(int n0, int base0):VeryLongInt(){
     setN(n0);
     setBase(base0);
+    setMultiply();
 }
 VeryLongInt::VeryLongInt(int n0, int base0, int seed):VeryLongInt(){
     setN(n0);
     setBase(base0);
+    setMultiply();
     for(int i = 0; i < n; ++i){
         setDigit(i, rand()%getBase());
     }
@@ -36,8 +38,8 @@ void VeryLongInt::setBase(int base0){
 void VeryLongInt::setDigit(int i, int x){
     number[i] += x;
 }
-void VeryLongInt::setMultiply(VeryLongInt* (*multiply0) (VeryLongInt, VeryLongInt)){
-    multiply = multiply0;
+void VeryLongInt::setMultiply(){
+    multiply = karatsuba;
 }
 
 VeryLongInt& VeryLongInt::operator= (VeryLongInt &a){

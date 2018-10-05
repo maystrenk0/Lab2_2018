@@ -1,13 +1,15 @@
 # depslib dependency file v1.0
-1538682067 source:c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2\lab2_main.cxx
+1538728023 source:c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2\lab2_functions.cxx
+	"lab2_verylongint.hxx"
+	<algorithm>
 	<iostream>
-	"copyright.hxx"
+
+1538754167 c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2\lab2_verylongint.hxx
+
+1538734413 source:c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2\lab2_verylongint.cxx
+	<iostream>
 	"lab2_verylongint.hxx"
 	"lab2_functions.hxx"
 
-1537558776 c:\users\alexander\desktop\cpp\2019\copyright\copyright.hxx
-
-1538682186 c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2_verylongint\lab2_verylongint.hxx
-
-1538068751 c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2_functions\lab2_functions.hxx
+1538734450 c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2\lab2_functions.hxx
 
