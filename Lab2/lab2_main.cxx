@@ -12,6 +12,7 @@ int main(){
 
         VeryLongInt *myNumber1 = new VeryLongInt(8,10,5);
         VeryLongInt *myNumber2 = new VeryLongInt(8,10,17);
+        VeryLongInt::setMultiply(karatsuba);
 
         myNumber1->output();
         cout<<endl<<endl;

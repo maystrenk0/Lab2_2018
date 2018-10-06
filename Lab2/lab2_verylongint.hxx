@@ -8,7 +8,7 @@ protected:
     int number[N] = {};
     int n = 1;
     int base = 10;
-    VeryLongInt* (*multiply) (VeryLongInt, VeryLongInt) ;
+    static VeryLongInt* (*multiply) (VeryLongInt, VeryLongInt);
 public:
     VeryLongInt() = default;
     VeryLongInt(int n0, int base0);
@@ -20,7 +20,7 @@ public:
     void setN(int n0);
     void setBase(int base0);
     void setDigit(int i, int x);
-    void setMultiply();
+    static void setMultiply(VeryLongInt* (*multiply0) (VeryLongInt, VeryLongInt));
 
     VeryLongInt& operator= (VeryLongInt &a);
     VeryLongInt* operator+ (VeryLongInt a);

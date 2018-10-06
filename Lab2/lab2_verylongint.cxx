@@ -3,15 +3,15 @@
 #include "lab2_verylongint.hxx"
 #include "lab2_functions.hxx"
 
+VeryLongInt* (*VeryLongInt::multiply) (VeryLongInt, VeryLongInt) = nullptr;
+
 VeryLongInt::VeryLongInt(int n0, int base0):VeryLongInt(){
     setN(n0);
     setBase(base0);
-    setMultiply();
 }
 VeryLongInt::VeryLongInt(int n0, int base0, int seed):VeryLongInt(){
     setN(n0);
     setBase(base0);
-    setMultiply();
     for(int i = 0; i < n; ++i){
         setDigit(i, rand()%getBase());
     }
@@ -38,8 +38,8 @@ void VeryLongInt::setBase(int base0){
 void VeryLongInt::setDigit(int i, int x){
     number[i] += x;
 }
-void VeryLongInt::setMultiply(){
-    multiply = karatsuba;
+void VeryLongInt::setMultiply(VeryLongInt* (*multiply0) (VeryLongInt, VeryLongInt)){
+    multiply = multiply0;
 }
 
 VeryLongInt& VeryLongInt::operator= (VeryLongInt &a){

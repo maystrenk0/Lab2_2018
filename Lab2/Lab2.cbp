@@ -31,7 +31,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="../../Copyright" />
 		</Compiler>
+		<Linker>
+			<Add library="../../Copyright/bin/Debug/libCopyright.a" />
+		</Linker>
 		<Unit filename="lab2_functions.cxx" />
 		<Unit filename="lab2_functions.hxx" />
 		<Unit filename="lab2_main.cxx" />

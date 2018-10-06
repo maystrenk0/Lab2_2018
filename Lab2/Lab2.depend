@@ -4,7 +4,7 @@
 	<algorithm>
 	<iostream>
 
-1538754167 c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2\lab2_verylongint.hxx
+1538831087 c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2\lab2_verylongint.hxx
 
 1538734413 source:c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2\lab2_verylongint.cxx
 	<iostream>
@@ -12,4 +12,12 @@
 	"lab2_functions.hxx"
 
 1538734450 c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2\lab2_functions.hxx
+
+1538830870 source:c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2\lab2_main.cxx
+	<iostream>
+	"copyright.hxx"
+	"lab2_verylongint.hxx"
+	"lab2_functions.hxx"
+
+1537558776 c:\users\alexander\desktop\cpp\2019\copyright\copyright.hxx
 
