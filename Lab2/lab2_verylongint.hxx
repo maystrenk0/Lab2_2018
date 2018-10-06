@@ -11,7 +11,6 @@ protected:
     static VeryLongInt* (*multiply) (VeryLongInt, VeryLongInt);
 public:
     VeryLongInt() = default;
-    VeryLongInt(int n0, int base0);
     VeryLongInt(int n0, int base0, int seed);
 
     int getN();

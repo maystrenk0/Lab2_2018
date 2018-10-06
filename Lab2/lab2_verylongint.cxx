@@ -5,18 +5,16 @@
 
 VeryLongInt* (*VeryLongInt::multiply) (VeryLongInt, VeryLongInt) = nullptr;
 
-VeryLongInt::VeryLongInt(int n0, int base0):VeryLongInt(){
+VeryLongInt::VeryLongInt(int n0, int base0, int seed = 0):VeryLongInt(){
     setN(n0);
     setBase(base0);
-}
-VeryLongInt::VeryLongInt(int n0, int base0, int seed):VeryLongInt(){
-    setN(n0);
-    setBase(base0);
-    for(int i = 0; i < n; ++i){
-        setDigit(i, rand()%getBase());
-    }
-    while(getDigit(n-1)==0){
-        setDigit(n-1, rand()%getBase());
+    if (seed != 0){
+        for(int i = 0; i < n; ++i){
+            setDigit(i, rand()%getBase());
+        }
+        while(getDigit(n-1)==0){
+            setDigit(n-1, rand()%getBase());
+        }
     }
 }
 
