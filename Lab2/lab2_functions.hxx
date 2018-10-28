@@ -6,5 +6,6 @@ VeryLongInt* karatsuba(VeryLongInt x, VeryLongInt y);
 VeryLongInt* toomKuk(VeryLongInt x, VeryLongInt y);
 VeryLongInt* shenhage(VeryLongInt x, VeryLongInt y);
 VeryLongInt* shtrassen(VeryLongInt x, VeryLongInt y);
+bool millerRabin(unsigned long long x, int k);
 
 #endif // LAB2_FUNCTIONS_HXX_INCLUDED

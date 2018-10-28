@@ -11,7 +11,7 @@ protected:
     static VeryLongInt* (*multiply) (VeryLongInt, VeryLongInt);
 public:
     VeryLongInt() = default;
-    VeryLongInt(int n0, int base0, int seed);
+    VeryLongInt(int n0, int base0, int seed = 0);
 
     int getN();
     int getBase();
@@ -24,11 +24,13 @@ public:
     VeryLongInt& operator= (VeryLongInt &a);
     VeryLongInt* operator+ (VeryLongInt a);
     VeryLongInt* operator* (VeryLongInt a);
+    bool operator== (VeryLongInt a);
+    bool operator< (VeryLongInt a);
+    bool operator> (VeryLongInt a);
 
     VeryLongInt* basicMultiply(VeryLongInt a);
     VeryLongInt* multiplyByDigit(int k);
     VeryLongInt* multiplyByBasePow(int k);
-
 
     VeryLongInt* getFirst(int k);
     VeryLongInt* getWithoutFirst(int k);
@@ -38,5 +40,7 @@ public:
 
     static const int notABigNumber = 5;
 };
+
+VeryLongInt* toVeryLongInt(int x, int base);
 
 #endif // LAB2_VERYLONGINT_HXX_INCLUDED

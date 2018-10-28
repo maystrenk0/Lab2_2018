@@ -5,7 +5,7 @@
 
 VeryLongInt* (*VeryLongInt::multiply) (VeryLongInt, VeryLongInt) = nullptr;
 
-VeryLongInt::VeryLongInt(int n0, int base0, int seed = 0):VeryLongInt(){
+VeryLongInt::VeryLongInt(int n0, int base0, int seed):VeryLongInt(){
     setN(n0);
     setBase(base0);
     if (seed != 0){
@@ -42,8 +42,11 @@ void VeryLongInt::setMultiply(VeryLongInt* (*multiply0) (VeryLongInt, VeryLongIn
 
 VeryLongInt& VeryLongInt::operator= (VeryLongInt &a){
     int an = a.getN();
-    for(int i = 0; i < an; ++i)
+    for(int i = 0; i < an; ++i){
+        int digit = this->getDigit(i);
+        this->setDigit(i,-digit);
         this->setDigit(i,a.getDigit(i));
+    }
     return *this;
 }
 VeryLongInt* VeryLongInt::operator+ (VeryLongInt a){
@@ -64,6 +67,31 @@ VeryLongInt* VeryLongInt::operator+ (VeryLongInt a){
 }
 VeryLongInt* VeryLongInt::operator* (VeryLongInt a){
     return multiply(*this, a);
+}
+bool VeryLongInt::operator== (VeryLongInt a){
+    if(getN()!=a.getN())
+        return false;
+    for(int i = 0; i < getN(); ++i)
+        if(getDigit(i)!=a.getDigit(i))
+            return false;
+    return true;
+}
+bool VeryLongInt::operator< (VeryLongInt a){
+    int n = getN();
+    if(n<a.getN())
+        return true;
+    if(n>a.getN())
+        return false;
+    for(int i = 0; i < n; ++i){
+        if(getDigit(n-i-1)<a.getDigit(n-i-1))
+            return true;
+        if(getDigit(n-i-1)>a.getDigit(n-i-1))
+            return false;
+    }
+    return false;
+}
+bool VeryLongInt::operator> (VeryLongInt a){
+    return !operator<(a);
 }
 
 VeryLongInt* VeryLongInt::basicMultiply(VeryLongInt a){
@@ -152,4 +180,18 @@ void VeryLongInt::checkLastDigit(){
     int n0 = getN()-1;
     if(getDigit(n0) == 0)
         setN(n0);
+}
+
+VeryLongInt* toVeryLongInt(int x, int base){
+    int i = 0, n = 1, a = x;
+    VeryLongInt *ans = new VeryLongInt(n, base);
+    while(a>=base){
+        ans->setDigit(i, a%base);
+        a/=base;
+        ++i;
+        ++n;
+    }
+    ans->setDigit(i, a%base);
+    ans->setN(n);
+    return ans;
 }

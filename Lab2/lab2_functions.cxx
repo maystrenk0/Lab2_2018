@@ -14,17 +14,6 @@ VeryLongInt* karatsuba(VeryLongInt x, VeryLongInt y){
     b = x.getFirst(m);
     c = y.getWithoutFirst(yn+yn%2-m);
     d = y.getFirst(m);
-    /*
-    std::cout<<std::endl;
-    a->output();
-    std::cout<<std::endl;
-    b->output();
-    std::cout<<std::endl;
-    c->output();
-    std::cout<<std::endl;
-    d->output();
-    std::cout<<std::endl;
-    */
     VeryLongInt *aTimesC = karatsuba(*a,*c);
     VeryLongInt *bTimesD = karatsuba(*b,*d);
     VeryLongInt *aTimesDPlusBTimesC = *(karatsuba(*a,*d))+*(karatsuba(*b,*c));
@@ -42,4 +31,26 @@ VeryLongInt* shenhage(VeryLongInt x, VeryLongInt y){
 VeryLongInt* shtrassen(VeryLongInt x, VeryLongInt y){
     return new VeryLongInt(500,10,14);
 }
+bool millerRabin(unsigned long long x, int k){
+    bool ans = false;
+    if(x%10==1)
+        return ans;
+    unsigned long long s = 0;
+    unsigned long long t = x-1;
+    while((t%10)%2 == 0){
+        t/=2;
+        ++s;
+    }
+    for(int i = 0; i < k; ++i){
+        unsigned long long a = rand()%(x-5)+2;
+        unsigned long long n =
+        if(s>1)
+            for(int i = 0; i < s-1; ++i){
 
+            }
+        return ans;
+    }
+    ans = true;
+    return ans;
+    return t;
+}
