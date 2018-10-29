@@ -31,6 +31,15 @@ VeryLongInt* shenhage(VeryLongInt x, VeryLongInt y){
 VeryLongInt* shtrassen(VeryLongInt x, VeryLongInt y){
     return new VeryLongInt(500,10,14);
 }
+unsigned long long modexp(unsigned long long x, unsigned long long y, unsigned long long N)
+{
+  if (y == 0) return 1;
+  unsigned long long z = modexp(x, y / 2, N);
+  if (y % 2 == 0)
+    return (z*z) % N;
+  else
+    return (x*z*z) % N;
+}
 bool millerRabin(unsigned long long x, int k){
     bool ans = false;
     if(x%10==1)
@@ -43,14 +52,19 @@ bool millerRabin(unsigned long long x, int k){
     }
     for(int i = 0; i < k; ++i){
         unsigned long long a = rand()%(x-5)+2;
-        unsigned long long n =
+        unsigned long long n = modexp(a,t,x);
+        if(n == 1 || n == x - 1)
+            break;
         if(s>1)
-            for(int i = 0; i < s-1; ++i){
-
+            for(unsigned int i = 0; i < s-1; ++i){
+                n = modexp(x,2,n);
+                if(n==1)
+                    return ans;
+                if(n==x-1)
+                    break;
             }
         return ans;
     }
     ans = true;
     return ans;
-    return t;
 }
