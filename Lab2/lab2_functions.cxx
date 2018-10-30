@@ -2,6 +2,7 @@
 #include "lab2_verylongint.hxx"
 #include <algorithm>
 #include <iostream>
+#include <cmath>
 
 VeryLongInt* karatsuba(VeryLongInt x, VeryLongInt y){
     int xn = x.getN();
@@ -40,6 +41,9 @@ unsigned long long modexp(unsigned long long x, unsigned long long y, unsigned l
   else
     return (x*z*z) % N;
 }
+unsigned long long gcd (unsigned long long a, unsigned long long b) {
+	return b ? gcd (b, a % b) : a;
+}
 bool millerRabin(unsigned long long x, int k){
     bool ans = false;
     if(x%10==1)
@@ -64,6 +68,20 @@ bool millerRabin(unsigned long long x, int k){
                     break;
             }
         return ans;
+    }
+    ans = true;
+    return ans;
+}
+bool solovayStrassen(unsigned long long x, int k){
+    bool ans = false;
+    if(x%2==0 && x!=2)
+        return ans;
+    for(int i = 0; i < k; ++i){
+        unsigned long long a = rand()%(x-4)+2;
+        if(gcd(a,x)>1)
+            return ans;
+        if(modexp(a,(x-1)/2,x)!=(a/x)%x)
+            return ans;
     }
     ans = true;
     return ans;
