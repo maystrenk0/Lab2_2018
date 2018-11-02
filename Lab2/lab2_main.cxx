@@ -24,6 +24,11 @@ int main(){
         myNumber3->output();
         cout<<endl<<endl;
 
+        cout<<millerRabin(15, 43);
+        cout<<endl<<endl;
+        cout<<millerRabin(13, 43);
+        cout<<endl<<endl;
+
         delete myNumber1;
         delete myNumber2;
     }

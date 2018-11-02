@@ -2,29 +2,29 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="lab2_verylongint.hxx" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="lab2_main.cxx" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="985" topLine="19" />
+			<Cursor1 position="606" topLine="15" />
 		</Cursor>
 	</File>
 	<File name="lab2_functions.hxx" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="367" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="lab2_main.cxx" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="635" topLine="21" />
+			<Cursor1 position="370" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="lab2_verylongint.cxx" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3930" topLine="137" />
+			<Cursor1 position="3626" topLine="131" />
 		</Cursor>
 	</File>
-	<File name="lab2_functions.cxx" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="lab2_verylongint.hxx" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1618" topLine="38" />
+			<Cursor1 position="985" topLine="28" />
+		</Cursor>
+	</File>
+	<File name="lab2_functions.cxx" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1910" topLine="40" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

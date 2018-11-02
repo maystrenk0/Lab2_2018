@@ -32,52 +32,48 @@ VeryLongInt* shenhage(VeryLongInt x, VeryLongInt y){
 VeryLongInt* shtrassen(VeryLongInt x, VeryLongInt y){
     return new VeryLongInt(500,10,14);
 }
-unsigned long long modexp(unsigned long long x, unsigned long long y, unsigned long long N)
+long modexp(long x, long y, long N)
 {
   if (y == 0) return 1;
-  unsigned long long z = modexp(x, y / 2, N);
+  long z = modexp(x, y / 2, N);
   if (y % 2 == 0)
     return (z*z) % N;
   else
     return (x*z*z) % N;
 }
-unsigned long long gcd (unsigned long long a, unsigned long long b) {
+long gcd (long a, long b) {
 	return b ? gcd (b, a % b) : a;
 }
-bool millerRabin(unsigned long long x, int k){
-    bool ans = false;
-    if(x%10==1)
-        return ans;
-    unsigned long long s = 0;
-    unsigned long long t = x-1;
-    while((t%10)%2 == 0){
+bool millerRabin(long x, long k){
+    if (x == 2)
+		return true;
+	if (x % 2 == 0)
+		return false;
+    for (long i; (i = gcd (x, k)) != 1; ++k)
+		if (x > i)
+			return false;
+    long t = x-1;
+	long s = 0;
+	while(t%2 == 0){
         t/=2;
         ++s;
     }
-    for(int i = 0; i < k; ++i){
-        unsigned long long a = rand()%(x-5)+2;
-        unsigned long long n = modexp(a,t,x);
-        if(n == 1 || n == x - 1)
-            break;
-        if(s>1)
-            for(unsigned int i = 0; i < s-1; ++i){
-                n = modexp(x,2,n);
-                if(n==1)
-                    return ans;
-                if(n==x-1)
-                    break;
-            }
-        return ans;
-    }
-    ans = true;
-    return ans;
+    long rem = modexp(k, t, x);
+	if (rem == 1 || rem == x-1)
+		return true;
+    if(s>1)
+        for (long i = 1; i < s; ++i){
+            if ((rem*rem)%x == x - 1)
+                return true;
+        }
+	return false;
 }
-bool solovayStrassen(unsigned long long x, int k){
+bool solovayStrassen(long x, int k){
     bool ans = false;
     if(x%2==0 && x!=2)
         return ans;
     for(int i = 0; i < k; ++i){
-        unsigned long long a = rand()%(x-4)+2;
+        long a = rand()%(x-4)+2;
         if(gcd(a,x)>1)
             return ans;
         if(modexp(a,(x-1)/2,x)!=(a/x)%x)

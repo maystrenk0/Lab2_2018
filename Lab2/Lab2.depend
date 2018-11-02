@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1540911877 source:c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2\lab2_functions.cxx
+1541153295 source:c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2\lab2_functions.cxx
 	"lab2_verylongint.hxx"
 	<algorithm>
 	<iostream>
@@ -12,9 +12,9 @@
 	"lab2_verylongint.hxx"
 	"lab2_functions.hxx"
 
-1540912826 c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2\lab2_functions.hxx
+1541152461 c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2\lab2_functions.hxx
 
-1540911892 source:c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2\lab2_main.cxx
+1541153450 source:c:\users\alexander\desktop\cpp\2019\lab2_2018\lab2\lab2_main.cxx
 	<iostream>
 	"copyright.hxx"
 	"lab2_verylongint.hxx"
