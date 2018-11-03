@@ -68,15 +68,46 @@ bool millerRabin(long x, long k){
         }
 	return false;
 }
+long jacobi(long a0, long b0){
+    long r = 0, a = a0, b = b0, c;
+    if(gcd(a,b) != 1)
+        return r;
+    r = 1;
+    if(a < 0){
+        a = -a;
+        if(b % 4 == 3)
+            r = -r;
+    }
+    long t = 0;
+    while(a != 0){
+        while(a % 2 == 0){
+            a /= 2;
+            ++t;
+        }
+        if(t % 2 == 1)
+            if(b % 8 == 3 || b % 8 == 5)
+                r = -r;
+        if(a % 4 == 3 && b % 4 == 3)
+            r = -r;
+        c = a;
+        a = b % c;
+        b = c;
+    }
+    return r;
+}
 bool solovayStrassen(long x, int k){
     bool ans = false;
-    if(x%2==0 && x!=2)
+    if(x % 2 == 0 && x != 2)
         return ans;
     for(int i = 0; i < k; ++i){
-        long a = rand()%(x-4)+2;
-        if(gcd(a,x)>1)
+        long a = rand()%(x-1)+1;
+        if(gcd(a,x)!=1)
             return ans;
-        if(modexp(a,(x-1)/2,x)!=(a/x)%x)
+        long t = modexp(a, (x-1)/2, x);
+        long j = jacobi(a,x);
+        if(j < 0)
+            j += x;
+        if(t != j && ans)
             return ans;
     }
     ans = true;

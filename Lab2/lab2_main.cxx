@@ -24,9 +24,9 @@ int main(){
         myNumber3->output();
         cout<<endl<<endl;
 
-        cout<<millerRabin(15, 43);
+        cout<<"\"15\" - "<<solovayStrassen(15, 113);
         cout<<endl<<endl;
-        cout<<millerRabin(13, 43);
+        cout<<"\"17\" - "<<solovayStrassen(113, 113);
         cout<<endl<<endl;
 
         delete myNumber1;
