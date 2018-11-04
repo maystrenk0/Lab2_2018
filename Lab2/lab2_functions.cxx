@@ -113,3 +113,25 @@ bool solovayStrassen(long x, int k){
     ans = true;
     return ans;
 }
+bool lemana(long x){
+    if(x <= 8){
+        if(x % 2 == 1)
+            return true;
+        else
+            return false;
+    }
+    for(long i = 2; i * i * i <= x; ++i)
+        if(x % i == 0)
+            return false;
+    for(long k = 1; k * k * k <= x; ++k)
+        for(long d = 0; d <= int(pow(x, 1.0/6)/(4 * sqrt(k))) + 1; ++d){
+            long a = int(sqrt(4 * k * x)) + d;
+            long b = sqrt(a * a - 4 * k * x);
+            if(b * b != a * a - 4 * k * x)
+                continue;
+            long d_star = gcd(a - b, x);
+            if(1 < d_star && d_star < x)
+                return false;
+        }
+    return true;
+}

@@ -8,5 +8,6 @@ VeryLongInt* shenhage(VeryLongInt x, VeryLongInt y);
 VeryLongInt* shtrassen(VeryLongInt x, VeryLongInt y);
 bool millerRabin(long x, long k);
 bool solovayStrassen(long x, int k);
+bool lemana(long x);
 
 #endif // LAB2_FUNCTIONS_HXX_INCLUDED

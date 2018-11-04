@@ -24,9 +24,9 @@ int main(){
         myNumber3->output();
         cout<<endl<<endl;
 
-        cout<<"\"15\" - "<<solovayStrassen(15, 113);
+        cout<<"\"15\" - "<<lemana(15);
         cout<<endl<<endl;
-        cout<<"\"17\" - "<<solovayStrassen(113, 113);
+        cout<<"\"17\" - "<<lemana(17);
         cout<<endl<<endl;
 
         delete myNumber1;
