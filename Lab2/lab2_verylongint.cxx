@@ -2,6 +2,7 @@
 #include <iostream>
 #include "lab2_verylongint.hxx"
 #include "lab2_functions.hxx"
+#include <string>
 
 VeryLongInt* (*VeryLongInt::multiply) (VeryLongInt, VeryLongInt) = nullptr;
 
@@ -172,7 +173,7 @@ VeryLongInt* VeryLongInt::getWithoutFirst(int k){
 
 void VeryLongInt::output(){
     for(int i = 0; i < n; ++i){
-        std::cout<<number[n-i-1]<<"_";
+        std::cout<<getDigit(n-i-1)<<"_";
     }
     std::cout<<"\b \b";
 }
@@ -193,5 +194,13 @@ VeryLongInt* toVeryLongInt(int x, int base){
     }
     ans->setDigit(i, a%base);
     ans->setN(n);
+    return ans;
+}
+VeryLongInt* fromStringToVeryLongInt(std::string x){
+    int n = x.length();
+    VeryLongInt *ans = new VeryLongInt(n, 10);
+    for(int i = 0; i < n; ++i){
+        ans->setDigit(i, x.at(n-i-1)-'0');
+    }
     return ans;
 }

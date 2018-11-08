@@ -3,6 +3,7 @@
 #include "copyright.hxx"
 #include "lab2_verylongint.hxx"
 #include "lab2_functions.hxx"
+#include <string>
 
 using namespace std;
 
@@ -10,8 +11,10 @@ int main(){
     try{
         copyright();
 
-        VeryLongInt *myNumber1 = new VeryLongInt(8,10,5);
-        VeryLongInt *myNumber2 = new VeryLongInt(8,10,17);
+        VeryLongInt *myNumber1 = new VeryLongInt(10,10,5);
+        //VeryLongInt *myNumber1 = fromStringToVeryLongInt("11111111111111111111");
+        VeryLongInt *myNumber2 = new VeryLongInt(10,10,17);
+        //VeryLongInt *myNumber2 = fromStringToVeryLongInt("22222222222222222222");
         VeryLongInt::setMultiply(karatsuba);
 
         myNumber1->output();
@@ -24,9 +27,24 @@ int main(){
         myNumber3->output();
         cout<<endl<<endl;
 
-        cout<<"\"15\" - "<<lemana(15);
+        string x = "3091736877545504312013726460137432236511";
+        VeryLongInt *myNumber4 = fromStringToVeryLongInt(x);
+
+        myNumber4->output();
         cout<<endl<<endl;
-        cout<<"\"17\" - "<<lemana(17);
+
+        cout<<endl<<endl;
+        cout<<"\"113353\" - "<<millerRabin(113353, 13);
+        cout<<endl<<endl;
+        cout<<"\"499\" - "<<millerRabin(499, 13);
+        cout<<endl<<endl;
+        cout<<"\"113353\" - "<<solovayStrassen(113353, 113);
+        cout<<endl<<endl;
+        cout<<"\"499\" - "<<solovayStrassen(499, 113);
+        cout<<endl<<endl;
+        cout<<"\"113353\" - "<<lemana(113353);
+        cout<<endl<<endl;
+        cout<<"\"499\" - "<<lemana(499);
         cout<<endl<<endl;
 
         delete myNumber1;

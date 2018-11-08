@@ -1,6 +1,7 @@
 //developed by Oleksandr Maystrenko K-22, 2018
 #ifndef LAB2_VERYLONGINT_HXX_INCLUDED
 #define LAB2_VERYLONGINT_HXX_INCLUDED
+#include <string>
 
 class VeryLongInt{
 protected:
@@ -42,5 +43,6 @@ public:
 };
 
 VeryLongInt* toVeryLongInt(int x, int base);
+VeryLongInt* fromStringToVeryLongInt(std::string x);
 
 #endif // LAB2_VERYLONGINT_HXX_INCLUDED
